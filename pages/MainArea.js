@@ -140,9 +140,13 @@ function MainArea() {
 				contractABI,
 				signer
 			)
-			let amtInSting = expenses[0].totalExpense.toString()
-			console.log(typeof amtInSting)
-			let tx1 = await contract.settleUp(1, {
+			let amt =
+				parseInt(expenses[0].totalExpense._hex) /
+				(groups[selectedGroup].participants.length + 1)
+			let amtInSting = amt.toString()
+
+			console.log(amtInSting)
+			let tx1 = await contract.settleUp(eid, {
 				value: amtInSting,
 			})
 			await tx1.wait()

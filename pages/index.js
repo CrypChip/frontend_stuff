@@ -21,7 +21,7 @@ export default function Home() {
 				router.push('MainArea')
 			}
 		}
-		startUp()
+		// startUp()
 	}, [])
 
 	return (
@@ -34,7 +34,13 @@ export default function Home() {
 				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<div className=' flex items-center justify-center h-[100vh]'>
+			<style>
+				{
+					'body { background: linear-gradient(110deg, #3bd0fd 60%, #090801 60%); }'
+				}
+			</style>
+			<div className=' flex flex-col items-center justify-center h-[100vh] space-y-16 text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-sky-600'>
+				<div className='text-9xl'>CrypChip</div>
 				<button className='btn btn-primary' onClick={handleConnection}>
 					Connect Wallet
 				</button>
